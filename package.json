@@ -1,0 +1,28 @@
+{
+  "name": "banco-inter",
+  "version": "0.0.0",
+  "description": "Node library for interacting with Banco Inter API",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arielschvartz/banco-inter.git"
+  },
+  "keywords": [
+    "bancointer",
+    "intermedium",
+    "banco",
+    "finance",
+    "bank",
+    "openbanking",
+    "inter"
+  ],
+  "author": "Ariel Schvartz <ariel@ariels.com.br>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arielschvartz/banco-inter/issues"
+  },
+  "homepage": "https://github.com/arielschvartz/banco-inter#readme"
+}
