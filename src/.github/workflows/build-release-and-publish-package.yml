@@ -1,0 +1,70 @@
+name: Build, Release and Publish Package
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  build:
+    env:
+      INTER_CLIENT_ID: ${{ secrets.INTER_CLIENT_ID }}
+      INTER_CLIENT_SECRET: ${{ secrets.INTER_CLIENT_SECRET }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'npm'
+      - run: npm set-script prepare ""
+      - run: npm ci
+      # - run: npm test
+      - run: npm run build
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: package
+          path: |
+            lib
+            package.json
+            package-lock.json
+          retention-days: 1
+  
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Download a single artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: package
+      - name: Release
+        uses: softprops/action-gh-release@v1
+
+  publish:
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Download a single artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: package
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'npm'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@chocolate-soup-inc'
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

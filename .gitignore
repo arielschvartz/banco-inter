@@ -1,0 +1,27 @@
+# package directories
+node_modules
+jspm_packages
+
+# build process directories
+.serverless
+.esbuild
+.webpack
+
+# Environment files
+*.env*
+
+# Editor Files
+*.sublime-project
+*.sublime-workspace
+*.vscode
+
+# Build
+build
+dist
+lib
+
+# Inter related files for testing
+Inter_API-Chave_e_Certificado*
+
+# Dropbox ignore files
+.dropboxignore
