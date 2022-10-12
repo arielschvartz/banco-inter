@@ -1,6 +1,6 @@
 {
   "name": "banco-inter",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Node library for interacting with Banco Inter API",
   "type": "module",
   "main": "./lib/cjs/index.js",
