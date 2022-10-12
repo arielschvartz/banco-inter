@@ -5,7 +5,7 @@ type TObterWebhookCadastradoProps = {
   accessToken: string;
 };
 
-type TObterWebhookCadastradoResponse = {
+export type TObterWebhookCadastradoResponse = {
   webhookUrl: string;
   criacao: string;
 };

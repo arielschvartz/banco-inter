@@ -51,7 +51,7 @@ type TIncluirBoletoDeCobrancaProps = {
   params: TIncluirBoletoDeCobrancaParams;
 };
 
-type TIncluirBoletoDeCobrancaResponse = {
+export type TIncluirBoletoDeCobrancaResponse = {
   seuNumero?: string;
   nossoNumero?: string;
   codigoBarras?: string;

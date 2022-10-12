@@ -14,7 +14,7 @@ type TSummary = {
   valor?: number;
 };
 
-type TRecuperarSumarioDeBoletosResponse = {
+export type TRecuperarSumarioDeBoletosResponse = {
   pagos?: TSummary;
   abertos?: TSummary;
   vencidos?: TSummary;

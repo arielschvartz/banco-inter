@@ -10,7 +10,7 @@ type TRecuperarColecaoDeBoletosProps = {
   queryParams: TRecuperarColecaoDeBoletosQueryParams;
 };
 
-type TRecuperarColecaoDeBoletosResponse = TBaseListResponse<TBoleto>;
+export type TRecuperarColecaoDeBoletosResponse = TBaseListResponse<TBoleto>;
 
 export const recuperarColecaoDeBoletos = async (props: TRecuperarColecaoDeBoletosProps) => {
   const { axios, accessToken, queryParams } = props;

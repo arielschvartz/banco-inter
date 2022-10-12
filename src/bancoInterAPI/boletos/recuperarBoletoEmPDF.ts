@@ -10,7 +10,7 @@ type TRecuperarBoletoEmPDFProps = {
   params: TRecuperarBoletoEmPDFParams;
 };
 
-type TRecuperarBoletoEmPDFResponse = { pdf: string };
+export type TRecuperarBoletoEmPDFResponse = { pdf: string };
 
 export const recuperarBoletoEmPDF = async (props: TRecuperarBoletoEmPDFProps) => {
   const { axios, accessToken, params } = props;

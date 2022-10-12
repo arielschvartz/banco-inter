@@ -11,7 +11,7 @@ type TRecuperarBoletoDetalhadoProps = {
   params: TRecuperarBoletoDetalhadoParams;
 };
 
-type TRecuperarBoletoDetalhadoResponse = TBoleto;
+export type TRecuperarBoletoDetalhadoResponse = TBoleto;
 
 export const recuperarBoletoDetalhado = async (props: TRecuperarBoletoDetalhadoProps) => {
   const { axios, accessToken, params } = props;
